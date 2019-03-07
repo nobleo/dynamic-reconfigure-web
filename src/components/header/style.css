@@ -1,0 +1,14 @@
+.toolbar-logo {
+    height: 100%;
+    margin-left: 8px;
+}
+
+.padRight {
+    padding-right: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .noMobile {
+        display: none;
+    }
+}

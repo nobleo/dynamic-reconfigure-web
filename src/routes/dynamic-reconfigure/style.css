@@ -1,0 +1,227 @@
+.drTable {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.drTable tr:first-child {
+    display: none;
+}
+
+.drTable tr:not(.shown) > *:nth-child(2),
+.drTable tr:not(.shown) > *:nth-child(4),
+.drTable tr:not(.shown) > *:nth-child(5),
+.drTable tr:not(.shown) > *:nth-child(6) {
+    display: none;
+}
+
+/*
+.drTable tr th {
+    background-color: lightgray;
+}*/
+
+.drTable tr {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.edited input,
+.edited select {
+    border-bottom: 3px solid var(--warning-yellow) !important;
+}
+
+.errorParam input{
+    border-bottom-color: var(--error-red) !important;
+}
+
+.colour-on-hover {
+    color: var(--mdc-theme-secondary) !important;
+}
+
+.colour-on-hover:hover {
+    background-color: var(--mdc-theme-primary);
+}
+
+.appContainer {
+    padding: 70px 10px 10px 10px;
+    min-height: 100%;
+    width: 100%;
+}
+
+.cardHeader {
+    padding: 8px;
+}
+.mobileHideMargin {
+    margin: 0;
+}
+
+.card {
+    width: 100%;
+}
+
+.cardBody {
+    padding: 8px;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.wideTextField {
+    width: 95%;
+    margin: auto auto;
+}
+.wideTextField > div {
+    width: 100% !important;
+}
+
+.serverFilter {
+    margin: 0 auto;
+    display: block !important;
+    width: 95%;
+}
+
+.error {
+    color: var(--error-red);
+    margin-bottom: 15px;
+}
+
+.checkboxLabel {
+    line-height: 38px;
+}
+
+.clickableText {
+    cursor: pointer;
+    text-decoration: underline;
+    user-select: none;
+}
+
+.clickableText:hover {
+    color: var(--mdc-theme-secondary);
+}
+
+.clickableText i {
+    vertical-align: middle;
+}
+.expandCaption{}
+
+@media only screen and (max-width: 1024px){
+    .drTable {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .drTable td {
+        width: 100%;
+        border: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    .drTable tr:not(:last-child) td:nth-child(7) {
+        padding-bottom: 16px;
+    }
+
+    .drTable tr td:last-child {
+        text-align: center;
+    }
+
+    .drTable td > div {
+        width: 100%;
+    }
+
+    .mobileStrong {
+        font-weight: bold;
+    }
+
+    .noMobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wideTextField {
+        width: 60%;
+    }
+
+    .card {
+        margin: 20px auto;
+        width: 60%;
+    }
+    .cardBody {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .serverFilter {
+        width: 60%;
+    }
+
+    .appContainer {
+        padding: 80px 20px 20px 20px;
+    }
+
+    .cardHeader {
+        padding: 16px;
+    }
+
+    .mobileHideMargin {
+        margin: inherit;
+    }
+
+    .drTable tr th,
+    .drTable tr td {
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .drTable tr:first-child {
+        display: table-row;
+    }
+
+    .drTable tr th:first-child {
+        width: 30%;
+        text-align: left;
+        margin-left: 16px;
+    }
+    .drTable td:first-child {
+        text-align: left;
+        margin-left: 16px;
+    }
+    .drTable tr th:nth-child(3) {
+        width: 40%;
+    }
+    .drTable tr th:nth-child(2) {
+        width: 5%;
+    }
+    .drTable tr th:nth-child(5) {
+        width: 15%;
+    }
+
+    .drTable tr > *:nth-child(2),
+    .drTable tr > th:nth-child(4),
+    .drTable tr > *:nth-child(5),
+    .drTable tr > *:nth-child(6) {
+        display: table-cell !important;
+    }
+
+    .drTable td > div {
+        width: 100%;
+    }
+
+    .drTable tr:not(:first-child):hover {
+        background-color: var(--mdc-theme-primary);
+    }
+
+    .drTable tr:nth-child(even) {
+        background-color: #fbfbfb;
+    }
+
+    .onlyMobile {
+        display: none;
+    }
+}

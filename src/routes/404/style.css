@@ -1,0 +1,19 @@
+.appContainer {
+	padding: 70px 10px 10px 10px;
+	min-height: 100%;
+	width: 100%;
+}
+
+.cardHeader {
+  padding: 16px;
+}
+
+.cardBody {
+  padding: 16px;
+}
+
+@media (min-width: 1024px) {
+	.appContainer {
+		padding: 80px 20px 20px 20px;
+	}
+}

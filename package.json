@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "dynamic-reconfigure",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build --no-prerender",
+    "serve": "preact serve",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor",
+    "rules": {
+      "no-unused-vars": "warn",
+      "react/sort-comp": "off",
+      "lines-around-comment": "off",
+      "react/prefer-stateless-function": "off"
+    }
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-synacor": "^1.1.0",
+    "if-env": "^1.0.0"
+  },
+  "dependencies": {
+    "linkstate": "^1.1.1",
+    "preact": "^8.2.1",
+    "preact-cli": "^2.0.0",
+    "preact-cli-plugin-async": "^2.0.0",
+    "preact-material-autocompleter": "^1.0.5",
+    "preact-material-components": "^1.5.6",
+    "preact-router": "^2.5.5",
+    "roslib": "^0.20.0",
+    "toastr": "^2.1.4"
+  }
+}
