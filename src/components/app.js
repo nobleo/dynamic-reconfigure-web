@@ -24,6 +24,7 @@ export default class App extends Component {
 					<DynamicReconfigureComponent path="/" />
 					<NotFound default />
 				</Router>
+				<div class="copyright">© Aivero</div>
 			</div>
 		);
 	}
