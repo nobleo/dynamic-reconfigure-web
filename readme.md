@@ -1,7 +1,7 @@
 # Dynamic Reconfigure Web
 This repository contains a Preact-based web frontend for ROS Dynamic Reconfigure.
 
-![Screenshot of the UI](https://gitlab.com/aivero/dynamic-reconfigure/blob/master/UI.png "Screenshot of dynamic reconfigure web ui")
+![Screenshot of the UI](https://gitlab.com/aivero/dynamic-reconfigure/raw/master/UI.png "Screenshot of dynamic reconfigure web ui")
 
 
 ## Running
