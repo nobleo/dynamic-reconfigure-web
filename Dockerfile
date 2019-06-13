@@ -2,10 +2,11 @@ FROM node:10.15-alpine as build
 
 WORKDIR /usr/src/app
 
-COPY ./dynamic-reconfiure/package*.json ./
+COPY ./package*.json ./
+COPY ./preact.config.js ./
 RUN npm i --only=production
 
-COPY ./dynamic-reconfiure .
+COPY ./src .
 
 #RUN sed -i '26i\if(typeof window !== "undefined")\' /usr/src/app/src/node_modules/socket.io/lib/index.js
 RUN npm run build

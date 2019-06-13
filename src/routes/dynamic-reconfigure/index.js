@@ -271,7 +271,7 @@ export default class DynamicReconfigureComponent extends Component {
 	/**
 	 * Render a dynamic reconfigure card for the given dynamic reconfigure server.
 	 * @param dynamicReconfigureServer - The server to render
-	 * @returns {*} - A Preact HTML element that represents the card.
+	 * @returns A Preact HTML element that represents the card.
 	 */
 	renderDynamicReconfigureCard(dynamicReconfigureServer) {
 		// console.info("size of dynreconf " + dynamicReconfigureServer.params.length);

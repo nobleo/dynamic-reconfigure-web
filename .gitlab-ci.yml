@@ -1,0 +1,34 @@
+image: docker:git
+services:
+  - docker:dind
+
+stages:
+  - build-image
+
+variables:
+  #  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:local
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  PREACT_BALENA_IMAGE: $CI_REGISTRY_IMAGE:balena
+  DOCKER_DRIVER: overlay2
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+
+build-preact:
+  stage: build-image
+  tags:
+    - docker
+  script:
+    - docker pull $CONTAINER_RELEASE_IMAGE || true
+    - docker build --cache-from $CONTAINER_RELEASE_IMAGE -t $CONTAINER_RELEASE_IMAGE .
+    - docker push $CONTAINER_RELEASE_IMAGE
+
+build-preact-balena:
+  stage: build-image
+  tags:
+    - docker
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker pull $PREACT_BALENA_IMAGE || true
+    - docker build --cache-from $PREACT_BALENA_IMAGE -t $PREACT_BALENA_IMAGE . -f balena.Dockerfile
+    - docker push $PREACT_BALENA_IMAGE
