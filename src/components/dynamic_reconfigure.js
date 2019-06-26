@@ -134,7 +134,6 @@ export default class DynamicReconfigure {
 			let paraSub = (dynamicParameterServer + '/parameter_descriptions');
 			this.subscribeTo(paraSub, 'dynamic_reconfigure/ConfigDescription', async msg => {
 				let params = msg.groups[0].parameters;
-				console.log(msg);
 
 				this.extractMinAndMaxValues(msg.min.doubles, msg.max.doubles, msg.dflt.doubles, params);
 				this.extractMinAndMaxValues(msg.min.ints, msg.max.ints, msg.dflt.ints, params);
@@ -248,7 +247,6 @@ export default class DynamicReconfigure {
 
 		return new Promise(resolve => {
 			drc.callService(req, res => {
-				console.log(res);
 				resolve(res.config);
 			});
 		});
