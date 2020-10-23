@@ -32,7 +32,7 @@ export default class DynamicReconfigureComponent extends Component {
 		servers: [],
 		storedConfiguration: [],
 		connectedToRos: false,
-		rosUrl: 'localhost:8080'
+		rosUrl: 'localhost:9090'
 	};
 
 	/**
