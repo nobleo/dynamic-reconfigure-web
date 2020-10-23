@@ -130,16 +130,21 @@ export default class DynamicReconfigure {
 	 */
 	getDynamicReconfigureParameters (dynamicParameterServer) {
 		return new Promise((resolve, reject) => {
-
 			let paraSub = (dynamicParameterServer + '/parameter_descriptions');
 			this.subscribeTo(paraSub, 'dynamic_reconfigure/ConfigDescription', async msg => {
-				let params = msg.groups[0].parameters;
-
-				this.extractMinAndMaxValues(msg.min.doubles, msg.max.doubles, msg.dflt.doubles, params);
-				this.extractMinAndMaxValues(msg.min.ints, msg.max.ints, msg.dflt.ints, params);
-				this.extractDefaults(msg.dflt.bools, params);
-				this.extractDefaults(msg.dflt.strs, params);
-				resolve(params);
+				var all_params_arrays = msg.groups.map((el) => {
+					let params = el.parameters;
+					this.extractMinAndMaxValues(msg.min.doubles, msg.max.doubles, msg.dflt.doubles, params);
+					this.extractMinAndMaxValues(msg.min.ints, msg.max.ints, msg.dflt.ints, params);
+					this.extractDefaults(msg.dflt.bools, params);
+					this.extractDefaults(msg.dflt.strs, params);
+					return params;
+				});
+				var all_params = [];
+				all_params_arrays.forEach(all_params_array => {
+					all_params = all_params.concat(all_params_array);
+				});
+				resolve(all_params);
 			});
 		});
 	}
